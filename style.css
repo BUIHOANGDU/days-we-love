@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  background: #fff6ec;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #f08080;
+}
+
+.avatars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.person img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+.heart {
+  font-size: 32px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.2); }
+}
+
+.days span {
+  font-size: 42px;
+  color: #f06292;
+  font-weight: bold;
+}
+
+.time {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+.scroll-hint {
+  margin-top: 30px;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* PHONG THƯ */
+.envelope-section {
+  height: 100vh;
+  background: #fdecef;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.envelope {
+  font-size: 80px;
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  50% { transform: translateY(-10px); }
+}
+
+.envelope-text {
+  margin-top: 10px;
+  color: #f06292;
+  font-size: 16px;
+}
