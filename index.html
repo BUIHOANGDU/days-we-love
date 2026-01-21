@@ -2,52 +2,52 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <title>Ngày chúng mình yêu</title>
   <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- NÚT NHẠC -->
-<button id="musicToggle" class="music-btn off">🎵</button>
+<canvas id="snowCanvas"></canvas>
 
-<!-- AUDIO -->
+<button id="musicToggle" class="music-btn off">🔇</button>
 <audio id="bgMusic" loop></audio>
 
 <div class="container">
   <h1>Ngày chúng mình yêu</h1>
 
-  <!-- CARD CHÍNH -->
   <div class="main-card">
-
     <div class="avatars">
       <div class="person">
         <img src="assets/avatar1.jpg" alt="Mèo Xanh">
         <p class="name">Mèo ❤️ Xanh</p>
-        <p class="dob">🎂 18/03/2000</p>
+        <p class="dob">18/03/2000</p>
       </div>
 
-      <div class="heart">❤️</div>
+      <div class="heart-box">
+        <div class="heart">❤️</div>
+      </div>
 
       <div class="person">
         <img src="assets/avatar2.jpg" alt="Mèo Trắng">
         <p class="name">Mèo ❤️ Trắng</p>
-        <p class="dob">🎂 25/07/2001</p>
+        <p class="dob">25/07/2001</p>
       </div>
     </div>
 
-    <div class="days">
-      <span id="days">0</span>
-      <p>Ngày rồi</p>
+    <div class="counter-section">
+      <div class="days">
+        <span id="days">0</span>
+        <p>NGÀY HẠNH PHÚC</p>
+      </div>
+      <div class="time" id="time">00 : 00 : 00</div>
     </div>
-
-    <div class="time" id="time">00 : 00 : 00</div>
   </div>
 
-  <div class="scroll-hint">↓ Kéo xuống ↓</div>
+  <div class="scroll-hint">↓ Vuốt xuống xem thư ↓</div>
 </div>
 
-<!-- PHONG THƯ -->
 <div class="envelope-section">
   <div class="envelope">✉️</div>
   <p class="envelope-text">Có một điều muốn nói…</p>
