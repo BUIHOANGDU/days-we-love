@@ -1,27 +1,38 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ngày chúng mình yêu</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- NÚT BẬT / TẮT NHẠC -->
+<button id="musicToggle" class="music-btn off">🎵</button>
+
+<!-- NHẠC NỀN -->
+<audio id="bgMusic" loop></audio>
+
 <div class="container">
+  <h1>Ngày chúng mình yêu</h1>
 
-  <!-- PHẦN TRÊN -->
-  <div class="top-section">
-    <h1>Ngày chúng mình yêu</h1>
+  <div class="avatars">
+    <div class="person">
+      <img src="assets/avatar1.jpg" alt="Mèo Xanh">
+      <p class="name">Mèo ❤️ Xanh</p>
+      <p class="dob">🎂 18/03/2000</p>
+    </div>
 
-    <div class="avatars">
-      <div class="person">
-        <img src="assets/avatar1.jpg" alt="Mèo Xanh">
-        <p class="name">Mèo ❤️ Xanh</p>
-        <p class="dob">🎂 18/03/2000</p>
-      </div>
+    <div class="heart">❤️</div>
 
-      <div class="heart">❤️</div>
-
-      <div class="person">
-        <img src="assets/avatar2.jpg" alt="Mèo Trắng">
-        <p class="name">Mèo ❤️ Trắng</p>
-        <p class="dob">🎂 25/07/2001</p>
-      </div>
+    <div class="person">
+      <img src="assets/avatar2.jpg" alt="Mèo Trắng">
+      <p class="name">Mèo ❤️ Trắng</p>
+      <p class="dob">🎂 25/07/2001</p>
     </div>
   </div>
 
-  <!-- TRỌNG TÂM -->
   <div class="days">
     <span id="days">0</span>
     <p>Ngày rồi</p>
@@ -29,9 +40,14 @@
 
   <div class="time" id="time">00 : 00 : 00</div>
 
-  <!-- PHẦN DƯỚI -->
-  <div class="bottom-section">
-    <div class="scroll-hint">↓ Kéo xuống ↓</div>
-  </div>
-
+  <div class="scroll-hint">↓ Kéo xuống ↓</div>
 </div>
+
+<div class="envelope-section">
+  <div class="envelope">✉️</div>
+  <p class="envelope-text">Có một điều muốn nói…</p>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
