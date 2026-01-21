@@ -1,5 +1,5 @@
-/* ================= LOVE DAY ================= */
-const loveDate = new Date("2024-01-20");
+/* ===== LOVE DAY ===== */
+const loveDate = new Date("2024-03-18");
 
 function updateDays() {
   const now = new Date();
@@ -19,53 +19,41 @@ function updateTime() {
 updateDays();
 setInterval(updateTime, 1000);
 
-/* ================= MUSIC (AUTO + TOGGLE) ================= */
-const musicList = [
+/* ===== AUTO MUSIC ===== */
+const songs = [
   "assets/music/HonCaYeu.mp3",
   "assets/music/NgayDauTien.mp3",
   "assets/music/YesIdo.mp3"
 ];
 
-const audio = document.getElementById("bgMusic");
+const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
 
-/* chọn nhạc ngẫu nhiên */
-audio.src = musicList[Math.floor(Math.random() * musicList.length)];
-audio.loop = true;
-audio.volume = 0.8;
+bgMusic.src = songs[Math.floor(Math.random() * songs.length)];
+bgMusic.volume = 0.8;
 
-/* TRẠNG THÁI DUY NHẤT */
 let isPlaying = false;
 
-/* iOS / Mobile: tự chạy sau lần chạm đầu */
-document.addEventListener(
-  "click",
-  () => {
-    if (!isPlaying) {
-      audio
-        .play()
-        .then(() => {
-          isPlaying = true;
-          musicBtn.classList.remove("off");
-        })
-        .catch(() => {});
-    }
-  },
-  { once: true }
-);
+/* iOS: play after first touch */
+document.addEventListener("click", () => {
+  if (!isPlaying) {
+    bgMusic.play().then(() => {
+      isPlaying = true;
+      musicBtn.classList.remove("off");
+    }).catch(() => {});
+  }
+}, { once: true });
 
-/* nút 🎵 bật / tắt */
+/* Toggle */
 musicBtn.addEventListener("click", (e) => {
   e.stopPropagation();
-
-  if (audio.paused) {
-    audio.play();
+  if (bgMusic.paused) {
+    bgMusic.play();
     isPlaying = true;
     musicBtn.classList.remove("off");
   } else {
-    audio.pause();
+    bgMusic.pause();
     isPlaying = false;
     musicBtn.classList.add("off");
   }
 });
-
