@@ -5,34 +5,25 @@ body {
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* ===== CONTAINER CHÍNH ===== */
+/* ===== CONTAINER ===== */
 .container {
   min-height: 100vh;
+  padding: 28px 20px 20px;
   max-width: 420px;
   margin: 0 auto;
-  padding: 24px 20px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* CHÌA KHÓA */
-  align-items: center;
   text-align: center;
-}
 
-/* ===== PHẦN TRÊN ===== */
-.top-section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 18px;
 }
 
 /* ===== TITLE ===== */
 h1 {
-  margin: 0;
+  color: #f08080;
   font-size: 22px;
   font-weight: 600;
-  color: #f08080;
+  margin-bottom: 16px;
 }
 
 /* ===== AVATARS ===== */
@@ -40,6 +31,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 26px;
+  margin-bottom: 22px;
 }
 
 .person {
@@ -50,8 +42,8 @@ h1 {
 }
 
 .person img {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffd6df;
@@ -59,7 +51,7 @@ h1 {
 }
 
 .person .name {
-  margin-top: 6px;
+  margin-top: 8px;
   font-size: 14px;
   font-weight: 600;
   color: #444;
@@ -74,24 +66,19 @@ h1 {
 /* ===== HEART ===== */
 .heart {
   font-size: 26px;
+  margin-top: 6px;
   animation: pulse 1.5s infinite;
 }
 
 @keyframes pulse {
-  0% { transform: scale(1); }
   50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
 }
 
-/* ===== TRỌNG TÂM ===== */
-.days {
-  margin-top: -10px;
-}
-
+/* ===== DAYS ===== */
 .days span {
-  font-size: 52px;
-  font-weight: 700;
+  font-size: 48px;
   color: #f06292;
+  font-weight: 700;
 }
 
 .days p {
@@ -100,6 +87,7 @@ h1 {
   color: #666;
 }
 
+/* ===== TIME ===== */
 .time {
   margin-top: 10px;
   font-size: 18px;
@@ -107,12 +95,9 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* ===== PHẦN DƯỚI ===== */
-.bottom-section {
-  padding-bottom: 12px;
-}
-
+/* ===== SCROLL ===== */
 .scroll-hint {
+  margin-top: 22px;
   font-size: 13px;
   color: #aaa;
 }
@@ -133,13 +118,32 @@ h1 {
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
 }
 
 .envelope-text {
   margin-top: 12px;
   font-size: 15px;
   color: #f06292;
+}
+
+/* ===== MUSIC BUTTON ===== */
+.music-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #ffd6df;
+  color: #f06292;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.music-btn.off {
+  opacity: 0.5;
 }
