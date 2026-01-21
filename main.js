@@ -1,5 +1,5 @@
 /* ===== LOVE DAY ===== */
-const loveDate = new Date("2024-03-18");
+const loveDate = new Date("2024-01-20");
 
 function updateDays() {
   const now = new Date();
@@ -57,3 +57,4 @@ musicBtn.addEventListener("click", (e) => {
     musicBtn.classList.add("off");
   }
 });
+
