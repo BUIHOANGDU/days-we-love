@@ -57,6 +57,107 @@ musicBtn.addEventListener("click", (e) => {
     musicBtn.classList.add("off");
   }
 });
+/* ===== MUSIC PLAYER LOGIC ===== */
+const songs = [
+  {
+    title: "Hơn cả yêu",
+    artist: "Đức Phúc",
+    src: "assets/music/HonCaYeu.mp3"
+  },
+  {
+    title: "Ngày đầu tiên",
+    artist: "Đức Phúc",
+    src: "assets/music/NgayDauTien.mp3"
+  },
+  {
+    title: "Yes I Do",
+    artist: "Đức Phúc",
+    src: "assets/music/YesIdo.mp3"
+  }
+];
+
+
+const audio = document.getElementById("bgMusic");
+const playBtn = document.getElementById("playBtn");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const progress = document.getElementById("progress");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
+const titleEl = document.getElementById("songTitle");
+const artistEl = document.getElementById("songArtist");
+
+let currentIndex = Math.floor(Math.random() * songs.length);
+let isPlaying = false;
+
+function loadSong(index) {
+  const song = songs[index];
+  audio.src = song.src;
+  titleEl.textContent = song.title;
+  artistEl.textContent = song.artist;
+}
+
+function playSong() {
+  audio.play().then(() => {
+    isPlaying = true;
+    playBtn.textContent = "⏸️";
+  }).catch(() => {});
+}
+
+function pauseSong() {
+  audio.pause();
+  isPlaying = false;
+  playBtn.textContent = "▶️";
+}
+
+playBtn.addEventListener("click", () => {
+  isPlaying ? pauseSong() : playSong();
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + songs.length) % songs.length;
+  loadSong(currentIndex);
+  playSong();
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % songs.length;
+  loadSong(currentIndex);
+  playSong();
+});
+
+audio.addEventListener("timeupdate", () => {
+  progress.value = audio.currentTime;
+  currentTimeEl.textContent = formatTime(audio.currentTime);
+});
+
+audio.addEventListener("loadedmetadata", () => {
+  progress.max = audio.duration;
+  durationEl.textContent = formatTime(audio.duration);
+});
+
+progress.addEventListener("input", () => {
+  audio.currentTime = progress.value;
+});
+
+audio.addEventListener("ended", () => {
+  nextBtn.click();
+});
+
+function formatTime(time) {
+  const m = Math.floor(time / 60);
+  const s = Math.floor(time % 60).toString().padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+/* iOS: tự chạy sau lần chạm đầu */
+document.addEventListener("click", () => {
+  if (!isPlaying) playSong();
+}, { once: true });
+
+loadSong(currentIndex);
+
+
 
 
 
