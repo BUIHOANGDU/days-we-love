@@ -1,15 +1,7 @@
-body {
-  margin: 0;
-  background: #fff6ec;
-  font-family: -apple-system, BlinkMacSystemFont,
-               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  overflow-x: hidden;
-}
-
 /* ===== CONTAINER ===== */
 .container {
-  min-height: 100svh; /* FIX mobile viewport */
-  padding: 28px 20px 20px;
+  min-height: 100svh;
+  padding: 24px 20px 32px;
   max-width: 420px;
   margin: 0 auto;
   text-align: center;
@@ -17,7 +9,11 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* QUAN TRỌNG */
+}
+
+/* đẩy nội dung chính lên trên */
+.top-section {
+  margin-top: 8px;
 }
 
 /* ===== TITLE ===== */
@@ -25,7 +21,7 @@ h1 {
   color: #f08080;
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 /* ===== AVATARS ===== */
@@ -33,128 +29,50 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 26px;
-  margin-bottom: 22px;
-}
-
-.person {
-  width: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  gap: 28px;
+  margin-bottom: 28px;
 }
 
 .person img {
-  width: 76px;
-  height: 76px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #ffd6df;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  width: 82px;
+  height: 82px;
 }
 
-.person .name {
-  margin-top: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #444;
-}
-
-.person .dob {
-  font-size: 12px;
-  color: #999;
-  margin-top: 2px;
-}
-
-/* ===== HEART ===== */
-.heart {
-  font-size: 26px;
-  margin-top: 6px;
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.2); }
-  100% { transform: scale(1); }
-}
-
-/* ===== DAYS ===== */
+/* ===== DAYS (TRỌNG TÂM) ===== */
 .days {
-  margin-top: 6px;
+  margin-top: 12px;
 }
 
 .days span {
-  font-size: 48px;
+  font-size: 56px;        /* TO HƠN */
   color: #f06292;
-  font-weight: 700;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .days p {
-  margin-top: 4px;
-  font-size: 14px;
+  margin-top: 6px;
+  font-size: 15px;
   color: #666;
 }
 
 /* ===== TIME ===== */
 .time {
-  margin-top: 10px;
+  margin-top: 14px;
   font-size: 18px;
   color: #333;
   letter-spacing: 1px;
 }
 
+/* ===== ĐẨY PHẦN DƯỚI XUỐNG ===== */
+.bottom-section {
+  margin-top: auto;
+  padding-top: 24px;
+}
+
 /* ===== SCROLL HINT ===== */
 .scroll-hint {
-  margin-top: 18px;
+  margin-top: 10px;
   font-size: 13px;
   color: #aaa;
-}
-
-/* ===== PHONG THƯ ===== */
-.envelope-section {
-  min-height: 100svh; /* FIX luôn phần này */
-  background: #fdecef;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.envelope {
-  font-size: 78px;
-  animation: float 2s infinite ease-in-out;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-.envelope-text {
-  margin-top: 12px;
-  font-size: 15px;
-  color: #f06292;
-}
-
-/* ===== MUSIC BUTTON ===== */
-.music-btn {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: #ffd6df;
-  color: #f06292;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  z-index: 999;
-}
-
-.music-btn.off {
-  opacity: 0.5;
 }
