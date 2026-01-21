@@ -160,4 +160,63 @@ h1 {
   opacity: 0.5;
 }
 
+/* ===== MUSIC PLAYER ===== */
+.music-player {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 32px);
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.song-info {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.song-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.song-artist {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+#progress {
+  width: 100%;
+  margin: 6px 0;
+}
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+}
+
+.controls {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.controls button {
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+
 
