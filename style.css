@@ -21,19 +21,14 @@ body {
   box-shadow: 0 3px 8px rgba(0,0,0,0.15);
   z-index: 999;
 }
-
-.music-btn.off {
-  opacity: 0.45;
-}
+.music-btn.off { opacity: 0.45; }
 
 /* ===== CONTAINER ===== */
 .container {
   min-height: 100vh;
-  padding: 20px 16px 12px;   /* 👈 giảm padding */
-  max-width: 390px;          /* 👈 đúng khổ iPhone */
+  padding: 16px;
+  max-width: 390px;
   margin: 0 auto;
-  text-align: center;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,17 +37,28 @@ body {
 /* ===== TITLE ===== */
 h1 {
   color: #f08080;
-  font-size: 20px;           /* 👈 nhỏ hơn */
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 10px;       /* 👈 sát hơn */
+  margin-bottom: 12px;
+}
+
+/* ===== MAIN CARD ===== */
+.main-card {
+  width: 100%;
+  background: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  padding: 18px 14px 20px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  text-align: center;
 }
 
 /* ===== AVATARS ===== */
 .avatars {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 22px;
-  margin-bottom: 14px;       /* 👈 giảm khoảng trống */
+  margin-bottom: 12px;
 }
 
 .person {
@@ -63,7 +69,7 @@ h1 {
 }
 
 .person img {
-  width: 70px;               /* 👈 nhỏ hơn chút */
+  width: 70px;
   height: 70px;
   border-radius: 50%;
   object-fit: cover;
@@ -71,41 +77,33 @@ h1 {
   box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
-.person .name {
+.name {
   margin-top: 6px;
   font-size: 13px;
   font-weight: 600;
   color: #444;
 }
 
-.person .dob {
+.dob {
   font-size: 11px;
   color: #999;
-  margin-top: 1px;
 }
 
 /* ===== HEART ===== */
 .heart {
   font-size: 24px;
-  margin-top: 4px;
   animation: pulse 1.6s infinite;
 }
-
 @keyframes pulse {
   50% { transform: scale(1.15); }
 }
 
 /* ===== DAYS ===== */
-.days {
-  margin-top: 4px;
-}
-
 .days span {
-  font-size: 44px;           /* 👈 vừa mắt iOS */
+  font-size: 52px;
   color: #f06292;
-  font-weight: 700;
+  font-weight: 800;
 }
-
 .days p {
   margin-top: 2px;
   font-size: 13px;
@@ -115,37 +113,34 @@ h1 {
 /* ===== TIME ===== */
 .time {
   margin-top: 6px;
-  font-size: 16px;
-  color: #333;
+  font-size: 15px;
+  color: #555;
   letter-spacing: 1px;
 }
 
 /* ===== SCROLL ===== */
 .scroll-hint {
-  margin-top: 14px;
+  margin-top: 16px;
   font-size: 12px;
   color: #aaa;
 }
 
 /* ===== PHONG THƯ ===== */
 .envelope-section {
-  height: 85vh;              /* 👈 không full 100vh */
+  height: 85vh;
   background: #fdecef;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
 .envelope {
   font-size: 70px;
   animation: float 2.2s infinite ease-in-out;
 }
-
 @keyframes float {
   50% { transform: translateY(-8px); }
 }
-
 .envelope-text {
   margin-top: 10px;
   font-size: 14px;
