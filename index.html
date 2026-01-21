@@ -10,39 +10,33 @@
 
 <!-- NÚT BẬT / TẮT NHẠC -->
 <button id="musicToggle" class="music-btn">🎵</button>
-<!-- NHẠC NỀN -->
+
+<!-- AUDIO -->
 <audio id="bgMusic"></audio>
-
-<!-- MUSIC PLAYER -->
-<div class="music-player" id="musicPlayer">
-  <div class="song-info">
-    <div class="song-title" id="songTitle">Song title</div>
-    <div class="song-artist" id="songArtist">Singer name</div>
-  </div>
-
-  <input
-    type="range"
-    id="progress"
-    value="0"
-    min="0"
-    step="1"
-  />
-
-  <div class="time-row">
-    <span id="currentTime">0:00</span>
-    <span id="duration">0:00</span>
-  </div>
-
-  <div class="controls">
-    <button id="prevBtn">⏮️</button>
-    <button id="playBtn">▶️</button>
-    <button id="nextBtn">⏭️</button>
-  </div>
-</div>
-
 
 <div class="container">
   <h1>Ngày chúng mình yêu</h1>
+
+  <!-- MUSIC BAR (NẰM NGAY DƯỚI TIÊU ĐỀ) -->
+  <div class="music-bar" id="musicBar">
+    <div class="music-info">
+      <div class="music-title" id="songTitle">Song title</div>
+      <div class="music-artist" id="songArtist">Singer name</div>
+    </div>
+
+    <input type="range" id="progress" value="0" min="0" step="1" />
+
+    <div class="time-row">
+      <span id="currentTime">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+
+    <div class="music-controls">
+      <button id="prevBtn">⏮️</button>
+      <button id="playBtn">▶️</button>
+      <button id="nextBtn">⏭️</button>
+    </div>
+  </div>
 
   <!-- AVATARS -->
   <div class="avatars">
@@ -82,5 +76,3 @@
 <script src="main.js"></script>
 </body>
 </html>
-
-
