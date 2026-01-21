@@ -9,39 +9,17 @@
 <body>
 
 <!-- NÚT BẬT / TẮT NHẠC -->
-<button id="musicToggle" class="music-btn">🎵</button>
+<button id="musicToggle" class="music-btn off">🎵</button>
 
 <!-- AUDIO -->
-<audio id="bgMusic"></audio>
+<audio id="bgMusic" loop></audio>
 
 <div class="container">
   <h1>Ngày chúng mình yêu</h1>
 
-  <!-- MUSIC BAR (NẰM NGAY DƯỚI TIÊU ĐỀ) -->
-  <div class="music-bar" id="musicBar">
-    <div class="music-info">
-      <div class="music-title" id="songTitle">Song title</div>
-      <div class="music-artist" id="songArtist">Singer name</div>
-    </div>
-
-    <input type="range" id="progress" value="0" min="0" step="1" />
-
-    <div class="time-row">
-      <span id="currentTime">0:00</span>
-      <span id="duration">0:00</span>
-    </div>
-
-    <div class="music-controls">
-      <button id="prevBtn">⏮️</button>
-      <button id="playBtn">▶️</button>
-      <button id="nextBtn">⏭️</button>
-    </div>
-  </div>
-
-  <!-- AVATARS -->
   <div class="avatars">
     <div class="person">
-      <img src="assets/avatar1.jpg" alt="Mèo Xanh">
+      <img src="assets/avatar1.jpg">
       <p class="name">Mèo ❤️ Xanh</p>
       <p class="dob">🎂 18/03/2000</p>
     </div>
@@ -49,25 +27,21 @@
     <div class="heart">❤️</div>
 
     <div class="person">
-      <img src="assets/avatar2.jpg" alt="Mèo Trắng">
+      <img src="assets/avatar2.jpg">
       <p class="name">Mèo ❤️ Trắng</p>
       <p class="dob">🎂 25/07/2001</p>
     </div>
   </div>
 
-  <!-- DAYS -->
   <div class="days">
     <span id="days">0</span>
     <p>Ngày rồi</p>
   </div>
 
-  <!-- TIME -->
   <div class="time" id="time">00 : 00 : 00</div>
-
   <div class="scroll-hint">↓ Kéo xuống ↓</div>
 </div>
 
-<!-- PHONG THƯ -->
 <div class="envelope-section">
   <div class="envelope">✉️</div>
   <p class="envelope-text">Có một điều muốn nói…</p>
