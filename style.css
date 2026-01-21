@@ -8,7 +8,7 @@ body {
 
 /* ===== CONTAINER ===== */
 .container {
-  min-height: 100svh; /* 👈 QUAN TRỌNG */
+  min-height: 100svh; /* FIX mobile viewport */
   padding: 28px 20px 20px;
   max-width: 420px;
   margin: 0 auto;
@@ -17,7 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* 👈 GIỮ MỌI THỨ Ở GIỮA */
+  justify-content: center; /* QUAN TRỌNG */
 }
 
 /* ===== TITLE ===== */
@@ -113,7 +113,7 @@ h1 {
 
 /* ===== PHONG THƯ ===== */
 .envelope-section {
-  min-height: 100svh;
+  min-height: 100svh; /* FIX luôn phần này */
   background: #fdecef;
   display: flex;
   flex-direction: column;
