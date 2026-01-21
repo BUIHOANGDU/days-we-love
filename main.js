@@ -75,7 +75,7 @@ class Snow {
     this.y = Math.random() * canvas.height - canvas.height;
     this.size = Math.random() * 3 + 1;
     this.speed = Math.random() * 1 + 0.5;
-    this.opacity = Math.random() * 0.5 + 0.3;
+    this.opacity = Math.random() * 0.3 + 0.7;
   }
   update() {
     this.y += this.speed;
@@ -99,3 +99,4 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+
