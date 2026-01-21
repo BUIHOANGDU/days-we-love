@@ -8,41 +8,46 @@
 </head>
 <body>
 
-<!-- NÚT BẬT / TẮT NHẠC -->
+<!-- NÚT NHẠC -->
 <button id="musicToggle" class="music-btn off">🎵</button>
 
-<!-- NHẠC NỀN -->
+<!-- AUDIO -->
 <audio id="bgMusic" loop></audio>
 
 <div class="container">
   <h1>Ngày chúng mình yêu</h1>
 
-  <div class="avatars">
-    <div class="person">
-      <img src="assets/avatar1.jpg" alt="Mèo Xanh">
-      <p class="name">Mèo ❤️ Xanh</p>
-      <p class="dob">🎂 18/03/2000</p>
+  <!-- CARD CHÍNH -->
+  <div class="main-card">
+
+    <div class="avatars">
+      <div class="person">
+        <img src="assets/avatar1.jpg" alt="Mèo Xanh">
+        <p class="name">Mèo ❤️ Xanh</p>
+        <p class="dob">🎂 18/03/2000</p>
+      </div>
+
+      <div class="heart">❤️</div>
+
+      <div class="person">
+        <img src="assets/avatar2.jpg" alt="Mèo Trắng">
+        <p class="name">Mèo ❤️ Trắng</p>
+        <p class="dob">🎂 25/07/2001</p>
+      </div>
     </div>
 
-    <div class="heart">❤️</div>
-
-    <div class="person">
-      <img src="assets/avatar2.jpg" alt="Mèo Trắng">
-      <p class="name">Mèo ❤️ Trắng</p>
-      <p class="dob">🎂 25/07/2001</p>
+    <div class="days">
+      <span id="days">0</span>
+      <p>Ngày rồi</p>
     </div>
-  </div>
 
-  <div class="days">
-    <span id="days">0</span>
-    <p>Ngày rồi</p>
+    <div class="time" id="time">00 : 00 : 00</div>
   </div>
-
-  <div class="time" id="time">00 : 00 : 00</div>
 
   <div class="scroll-hint">↓ Kéo xuống ↓</div>
 </div>
 
+<!-- PHONG THƯ -->
 <div class="envelope-section">
   <div class="envelope">✉️</div>
   <p class="envelope-text">Có một điều muốn nói…</p>
