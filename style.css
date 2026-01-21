@@ -3,13 +3,6 @@
   box-sizing: border-box;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-}
-
-/* ===== BODY ===== */
 body {
   margin: 0;
   background: #fff6ec;
@@ -17,52 +10,43 @@ body {
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* ===== CONTAINER (CĂN TỶ LỆ CHUẨN APP) ===== */
+/* ===== CONTAINER – FIX TRIỆT ĐỂ ===== */
 .container {
-  min-height: 100vh;
+  height: 100vh;
   max-width: 420px;
   margin: 0 auto;
-
-  padding-top: 48px;     /* khoảng trống trên */
-  padding-bottom: 40px;  /* khoảng trống dưới */
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 32px 20px 28px;
 
   display: flex;
   flex-direction: column;
+  justify-content: space-between; /* 🔥 QUAN TRỌNG */
   align-items: center;
 }
 
 /* ===== TITLE ===== */
 h1 {
+  margin: 0;
   color: #f08080;
   font-size: 22px;
   font-weight: 600;
-  margin: 0 0 28px 0; /* cách avatar */
 }
 
-/* ===== AVATARS ===== */
+/* ===== AVATAR BLOCK ===== */
 .avatars {
-  width: 100%;
+  margin-top: 24px;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 32px;
-  margin-bottom: 36px;
 }
 
 .person {
   width: 120px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
 }
 
 .person img {
   width: 80px !important;
   height: 80px !important;
-  max-width: 80px !important;
-  max-height: 80px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffd6df;
@@ -73,13 +57,12 @@ h1 {
   margin-top: 10px;
   font-size: 14px;
   font-weight: 600;
-  color: #444;
 }
 
 .person .dob {
+  margin-top: 4px;
   font-size: 12px;
   color: #999;
-  margin-top: 4px;
 }
 
 /* ===== HEART ===== */
@@ -95,17 +78,15 @@ h1 {
   100% { transform: scale(1); }
 }
 
-/* ===== DAYS (TRỌNG TÂM MÀN HÌNH) ===== */
+/* ===== CENTER (TRỌNG TÂM) ===== */
 .days {
-  margin-top: 8px;
   text-align: center;
 }
 
 .days span {
   font-size: 56px;
-  color: #f06292;
   font-weight: 700;
-  line-height: 1.1;
+  color: #f06292;
 }
 
 .days p {
@@ -116,16 +97,15 @@ h1 {
 
 /* ===== TIME ===== */
 .time {
-  margin-top: 16px;
+  margin-top: 14px;
   font-size: 18px;
   color: #333;
   letter-spacing: 1px;
 }
 
-/* ===== SCROLL HINT (ĐẨY XUỐNG GẦN ĐÁY) ===== */
+/* ===== BOTTOM ===== */
 .scroll-hint {
-  margin-top: auto;
-  padding-top: 24px;
+  margin-top: 12px;
   font-size: 13px;
   color: #aaa;
 }
