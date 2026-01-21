@@ -1,3 +1,15 @@
+/* ===== RESET ===== */
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== BODY ===== */
 body {
   margin: 0;
   background: #fff6ec;
@@ -5,16 +17,20 @@ body {
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-/* ===== CONTAINER ===== */
+/* ===== CONTAINER (CĂN TỶ LỆ CHUẨN APP) ===== */
 .container {
-  min-height: 100svh;
-  padding: 24px 20px;
+  min-height: 100vh;
   max-width: 420px;
   margin: 0 auto;
-  text-align: center;
+
+  padding-top: 48px;     /* khoảng trống trên */
+  padding-bottom: 40px;  /* khoảng trống dưới */
+  padding-left: 20px;
+  padding-right: 20px;
 
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* ===== TITLE ===== */
@@ -22,16 +38,17 @@ h1 {
   color: #f08080;
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin: 0 0 28px 0; /* cách avatar */
 }
 
 /* ===== AVATARS ===== */
 .avatars {
+  width: 100%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 28px;
-  margin-bottom: 32px;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 36px;
 }
 
 .person {
@@ -42,8 +59,10 @@ h1 {
 }
 
 .person img {
-  width: 80px;
-  height: 80px;
+  width: 80px !important;
+  height: 80px !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffd6df;
@@ -51,7 +70,7 @@ h1 {
 }
 
 .person .name {
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 14px;
   font-weight: 600;
   color: #444;
@@ -60,13 +79,13 @@ h1 {
 .person .dob {
   font-size: 12px;
   color: #999;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 /* ===== HEART ===== */
 .heart {
-  font-size: 26px;
-  margin-top: 6px;
+  font-size: 28px;
+  margin-top: 18px;
   animation: pulse 1.5s infinite;
 }
 
@@ -76,37 +95,37 @@ h1 {
   100% { transform: scale(1); }
 }
 
-/* ===== DAYS (TRỌNG TÂM) ===== */
+/* ===== DAYS (TRỌNG TÂM MÀN HÌNH) ===== */
 .days {
-  margin-top: auto;
-  margin-bottom: 6px;
+  margin-top: 8px;
+  text-align: center;
 }
 
 .days span {
-  font-size: 58px;
+  font-size: 56px;
   color: #f06292;
-  font-weight: 800;
-  line-height: 1;
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .days p {
   margin-top: 6px;
-  font-size: 15px;
+  font-size: 14px;
   color: #666;
 }
 
 /* ===== TIME ===== */
 .time {
-  margin-top: 12px;
+  margin-top: 16px;
   font-size: 18px;
   color: #333;
   letter-spacing: 1px;
 }
 
-/* ===== SCROLL HINT ===== */
+/* ===== SCROLL HINT (ĐẨY XUỐNG GẦN ĐÁY) ===== */
 .scroll-hint {
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: 24px;
   font-size: 13px;
   color: #aaa;
 }
