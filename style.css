@@ -1,14 +1,17 @@
 body {
   margin: 0;
   background: #fff6ec;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-               Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont,
+               "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* ===== CONTAINER ===== */
 .container {
   min-height: 100vh;
   padding: 24px 20px;
   text-align: center;
+  max-width: 420px;
+  margin: 0 auto;
 }
 
 /* ===== TITLE ===== */
@@ -16,20 +19,20 @@ h1 {
   color: #f08080;
   font-size: 22px;
   font-weight: 600;
-  letter-spacing: 0.5px;
   margin-bottom: 24px;
 }
 
 /* ===== AVATARS ===== */
 .avatars {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  gap: 32px;
+  margin-bottom: 20px;
 }
 
 .person {
-  width: 120px;
+  width: 110px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,7 +62,8 @@ h1 {
 
 /* ===== HEART ===== */
 .heart {
-  font-size: 30px;
+  font-size: 28px;
+  margin-top: -6px;
   animation: pulse 1.5s infinite;
 }
 
@@ -81,15 +85,15 @@ h1 {
 }
 
 .days p {
-  margin: 6px 0 0;
+  margin-top: 6px;
   font-size: 14px;
   color: #666;
 }
 
 /* ===== TIME ===== */
 .time {
-  font-size: 18px;
   margin-top: 12px;
+  font-size: 18px;
   color: #333;
   letter-spacing: 1px;
 }
@@ -97,8 +101,8 @@ h1 {
 /* ===== SCROLL HINT ===== */
 .scroll-hint {
   margin-top: 28px;
-  color: #aaa;
   font-size: 13px;
+  color: #aaa;
 }
 
 /* ===== PHONG THƯ ===== */
@@ -124,6 +128,6 @@ h1 {
 
 .envelope-text {
   margin-top: 12px;
-  color: #f06292;
   font-size: 15px;
+  color: #f06292;
 }
