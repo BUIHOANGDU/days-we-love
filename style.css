@@ -5,6 +5,27 @@ body {
                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/* ===== MUSIC BUTTON ===== */
+.music-btn {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: #ffd6df;
+  color: #f06292;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.music-btn.off {
+  opacity: 0.5;
+}
+
 /* ===== CONTAINER ===== */
 .container {
   min-height: 100vh;
@@ -23,7 +44,60 @@ h1 {
   color: #f08080;
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+}
+
+/* ===== MUSIC BAR ===== */
+.music-bar {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.music-info {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.music-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.music-artist {
+  font-size: 12px;
+  color: #888;
+  margin-top: 2px;
+}
+
+#progress {
+  width: 100%;
+  margin: 6px 0;
+}
+
+.time-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+}
+
+.music-controls {
+  margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.music-controls button {
+  border: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
 }
 
 /* ===== AVATARS ===== */
@@ -134,89 +208,3 @@ h1 {
   font-size: 15px;
   color: #f06292;
 }
-
-/* ===== MUSIC BUTTON ===== */
-.music-btn {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: #ffd6df;
-  color: #f06292;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  z-index: 999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.music-btn.off {
-  opacity: 0.5;
-}
-
-/* ===== MUSIC PLAYER ===== */
-.music-player {
-  position: fixed;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 32px);
-  max-width: 420px;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 14px 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  z-index: 999;
-}
-
-.song-info {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.song-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-}
-
-.song-artist {
-  font-size: 12px;
-  color: #888;
-  margin-top: 2px;
-}
-
-#progress {
-  width: 100%;
-  margin: 6px 0;
-}
-
-.time-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: #666;
-}
-
-.controls {
-  margin-top: 8px;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.controls button {
-  border: none;
-  background: none;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-
-
