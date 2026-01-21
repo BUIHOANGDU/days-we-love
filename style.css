@@ -1,4 +1,4 @@
-style css body {
+body {
   margin: 0;
   background: #fff6ec;
   font-family: -apple-system, BlinkMacSystemFont,
@@ -7,15 +7,14 @@ style css body {
 
 /* ===== CONTAINER ===== */
 .container {
-  min-height: 100vh;
-  padding: 28px 20px 20px;
+  min-height: 100svh;
+  padding: 24px 20px;
   max-width: 420px;
   margin: 0 auto;
   text-align: center;
 
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 /* ===== TITLE ===== */
@@ -23,15 +22,16 @@ h1 {
   color: #f08080;
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 /* ===== AVATARS ===== */
 .avatars {
   display: flex;
   align-items: center;
-  gap: 26px;
-  margin-bottom: 22px;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 32px;
 }
 
 .person {
@@ -42,8 +42,8 @@ h1 {
 }
 
 .person img {
-  width: 76px;
-  height: 76px;
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #ffd6df;
@@ -76,26 +76,28 @@ h1 {
   100% { transform: scale(1); }
 }
 
-/* ===== DAYS ===== */
+/* ===== DAYS (TRỌNG TÂM) ===== */
 .days {
-  margin-top: 6px;
+  margin-top: auto;
+  margin-bottom: 6px;
 }
 
 .days span {
-  font-size: 48px;
+  font-size: 58px;
   color: #f06292;
-  font-weight: 700;
+  font-weight: 800;
+  line-height: 1;
 }
 
 .days p {
-  margin-top: 4px;
-  font-size: 14px;
+  margin-top: 6px;
+  font-size: 15px;
   color: #666;
 }
 
 /* ===== TIME ===== */
 .time {
-  margin-top: 10px;
+  margin-top: 12px;
   font-size: 18px;
   color: #333;
   letter-spacing: 1px;
@@ -103,7 +105,8 @@ h1 {
 
 /* ===== SCROLL HINT ===== */
 .scroll-hint {
-  margin-top: 22px;
+  margin-top: auto;
+  padding-top: 18px;
   font-size: 13px;
   color: #aaa;
 }
@@ -134,88 +137,3 @@ h1 {
   font-size: 15px;
   color: #f06292;
 }
-
-/* ===== MUSIC BUTTON ===== */
-.music-btn {
-  position: fixed;
-  top: 16px;
-  right: 16px;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: none;
-  background: #ffd6df;
-  color: #f06292;
-  font-size: 20px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  z-index: 999;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.music-btn.off {
-  opacity: 0.5;
-}
-
-/* ===== MUSIC PLAYER ===== */
-.music-player {
-  position: fixed;
-  bottom: 16px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 32px);
-  max-width: 420px;
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 14px 16px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-  z-index: 999;
-}
-
-.song-info {
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.song-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-}
-
-.song-artist {
-  font-size: 12px;
-  color: #888;
-  margin-top: 2px;
-}
-
-#progress {
-  width: 100%;
-  margin: 6px 0;
-}
-
-.time-row {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  color: #666;
-}
-
-.controls {
-  margin-top: 8px;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.controls button {
-  border: none;
-  background: none;
-  font-size: 22px;
-  cursor: pointer;
-}
-
-
