@@ -17,7 +17,7 @@ function updateCounter() {
 setInterval(updateCounter, 1000);
 updateCounter();
 
-/* ===== NHẠC NỀN ===== */
+/* ===== NHẠC NỀN & VIỀN PHÁT SÁNG ===== */
 const songs = [
   "assets/music/HonCaYeu.mp3",
   "assets/music/NgayDauTien.mp3",
@@ -25,16 +25,30 @@ const songs = [
 ];
 const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
+const mainCard = document.querySelector(".main-card"); // Lấy thẻ card
 
 bgMusic.src = songs[Math.floor(Math.random() * songs.length)];
+
+// Hàm bật hiệu ứng
+function enableGlow() {
+  musicBtn.classList.add("playing");
+  musicBtn.innerText = "🎵";
+  mainCard.classList.add("playing-glow");
+}
+
+// Hàm tắt hiệu ứng
+function disableGlow() {
+  musicBtn.classList.remove("playing");
+  musicBtn.innerText = "🔇";
+  mainCard.classList.remove("playing-glow");
+}
 
 document.addEventListener(
   "click",
   () => {
     if (bgMusic.paused) {
       bgMusic.play().then(() => {
-        musicBtn.classList.add("playing");
-        musicBtn.innerText = "🎵";
+        enableGlow();
       });
     }
   },
@@ -45,15 +59,14 @@ musicBtn.addEventListener("click", (e) => {
   e.stopPropagation();
   if (bgMusic.paused) {
     bgMusic.play();
-    musicBtn.classList.add("playing");
-    musicBtn.innerText = "🎵";
+    enableGlow();
   } else {
     bgMusic.pause();
-    musicBtn.classList.remove("playing");
-    musicBtn.innerText = "🔇";
+    disableGlow();
   }
 });
 
+/* ===== GIỮ NGUYÊN PHẦN TUYẾT RƠI ===== */
 /* ===== TUYẾT RƠI (CANVAS) ===== */
 const canvas = document.getElementById("snowCanvas");
 const ctx = canvas.getContext("2d");
@@ -75,7 +88,7 @@ class Snow {
     this.y = Math.random() * canvas.height - canvas.height;
     this.size = Math.random() * 3 + 1;
     this.speed = Math.random() * 1 + 0.5;
-    this.opacity = Math.random() * 0.3 + 0.7;
+    this.opacity = Math.random() * 0.5 + 0.3;
   }
   update() {
     this.y += this.speed;
@@ -99,4 +112,3 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
-
