@@ -17,22 +17,46 @@ function updateTime() {
 
 updateDays();
 setInterval(updateTime, 1000);
-/* ===== RANDOM MUSIC ===== */
+/* ===== RANDOM MUSIC + TOGGLE ===== */
 const musicList = [
-  "assets/music/HonCaYeu.mp3",
-  "assets/music/NgayDauTien.mp3",
-  "assets/music/YesIdo.mp3"
+  "assets/music/love1.mp3",
+  "assets/music/love2.mp3",
+  "assets/music/love3.mp3"
 ];
 
 const bgMusic = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicToggle");
+
+// chọn nhạc ngẫu nhiên
 const randomIndex = Math.floor(Math.random() * musicList.length);
 bgMusic.src = musicList[randomIndex];
 
-// iOS cần user interaction
+let isPlaying = false;
+
+// iOS: cần user interaction lần đầu
 document.addEventListener("click", () => {
-  if (bgMusic.paused) {
-    bgMusic.play().catch(() => {});
+  if (!isPlaying) {
+    bgMusic.play().then(() => {
+      isPlaying = true;
+      musicBtn.classList.remove("off");
+    }).catch(() => {});
   }
 }, { once: true });
+
+// bật / tắt bằng nút 🎵
+musicBtn.addEventListener("click", (e) => {
+  e.stopPropagation(); // không trigger click toàn trang
+
+  if (bgMusic.paused) {
+    bgMusic.play();
+    isPlaying = true;
+    musicBtn.classList.remove("off");
+  } else {
+    bgMusic.pause();
+    isPlaying = false;
+    musicBtn.classList.add("off");
+  }
+});
+
 
 
