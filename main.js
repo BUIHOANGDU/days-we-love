@@ -17,3 +17,22 @@ function updateTime() {
 
 updateDays();
 setInterval(updateTime, 1000);
+/* ===== RANDOM MUSIC ===== */
+const musicList = [
+  "assets/music/HonCaYeu.mp3",
+  "assets/music/NgayDauTien.mp3",
+  "assets/music/YesIdo.mp3"
+];
+
+const bgMusic = document.getElementById("bgMusic");
+const randomIndex = Math.floor(Math.random() * musicList.length);
+bgMusic.src = musicList[randomIndex];
+
+// iOS cần user interaction
+document.addEventListener("click", () => {
+  if (bgMusic.paused) {
+    bgMusic.play().catch(() => {});
+  }
+}, { once: true });
+
+
