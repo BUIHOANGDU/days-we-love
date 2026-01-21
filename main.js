@@ -4,8 +4,8 @@ const loveDate = new Date("2024-03-18");
 function updateDays() {
   const now = new Date();
   const diff = now - loveDate;
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  document.getElementById("days").innerText = days;
+  document.getElementById("days").innerText =
+    Math.floor(diff / (1000 * 60 * 60 * 24));
 }
 
 function updateTime() {
@@ -34,7 +34,7 @@ bgMusic.volume = 0.8;
 
 let isPlaying = false;
 
-/* iOS: play after first touch */
+/* iOS autoplay after first tap */
 document.addEventListener("click", () => {
   if (!isPlaying) {
     bgMusic.play().then(() => {
@@ -44,7 +44,6 @@ document.addEventListener("click", () => {
   }
 }, { once: true });
 
-/* Toggle */
 musicBtn.addEventListener("click", (e) => {
   e.stopPropagation();
   if (bgMusic.paused) {
