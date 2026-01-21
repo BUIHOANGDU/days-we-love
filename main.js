@@ -1,3 +1,4 @@
+/* ================= LOVE DAY ================= */
 const loveDate = new Date("2024-03-18");
 
 function updateDays() {
@@ -17,47 +18,8 @@ function updateTime() {
 
 updateDays();
 setInterval(updateTime, 1000);
-/* ===== RANDOM MUSIC + TOGGLE ===== */
-const musicList = [
-  "assets/music/love1.mp3",
-  "assets/music/love2.mp3",
-  "assets/music/love3.mp3"
-];
 
-const bgMusic = document.getElementById("bgMusic");
-const musicBtn = document.getElementById("musicToggle");
-
-// chọn nhạc ngẫu nhiên
-const randomIndex = Math.floor(Math.random() * musicList.length);
-bgMusic.src = musicList[randomIndex];
-
-let isPlaying = false;
-
-// iOS: cần user interaction lần đầu
-document.addEventListener("click", () => {
-  if (!isPlaying) {
-    bgMusic.play().then(() => {
-      isPlaying = true;
-      musicBtn.classList.remove("off");
-    }).catch(() => {});
-  }
-}, { once: true });
-
-// bật / tắt bằng nút 🎵
-musicBtn.addEventListener("click", (e) => {
-  e.stopPropagation(); // không trigger click toàn trang
-
-  if (bgMusic.paused) {
-    bgMusic.play();
-    isPlaying = true;
-    musicBtn.classList.remove("off");
-  } else {
-    bgMusic.pause();
-    isPlaying = false;
-    musicBtn.classList.add("off");
-  }
-});
-/* ===== MUSIC PLAYER LOGIC ===== */
+/* ================= MUSIC PLAYER ================= */
 const songs = [
   {
     title: "Hơn cả yêu",
@@ -76,7 +38,6 @@ const songs = [
   }
 ];
 
-
 const audio = document.getElementById("bgMusic");
 const playBtn = document.getElementById("playBtn");
 const prevBtn = document.getElementById("prevBtn");
@@ -86,10 +47,12 @@ const currentTimeEl = document.getElementById("currentTime");
 const durationEl = document.getElementById("duration");
 const titleEl = document.getElementById("songTitle");
 const artistEl = document.getElementById("songArtist");
+const musicBtn = document.getElementById("musicToggle");
 
 let currentIndex = Math.floor(Math.random() * songs.length);
 let isPlaying = false;
 
+/* Load song */
 function loadSong(index) {
   const song = songs[index];
   audio.src = song.src;
@@ -97,10 +60,12 @@ function loadSong(index) {
   artistEl.textContent = song.artist;
 }
 
+/* Play / Pause */
 function playSong() {
   audio.play().then(() => {
     isPlaying = true;
     playBtn.textContent = "⏸️";
+    musicBtn.classList.remove("off");
   }).catch(() => {});
 }
 
@@ -108,8 +73,10 @@ function pauseSong() {
   audio.pause();
   isPlaying = false;
   playBtn.textContent = "▶️";
+  musicBtn.classList.add("off");
 }
 
+/* Controls */
 playBtn.addEventListener("click", () => {
   isPlaying ? pauseSong() : playSong();
 });
@@ -126,6 +93,7 @@ nextBtn.addEventListener("click", () => {
   playSong();
 });
 
+/* Progress */
 audio.addEventListener("timeupdate", () => {
   progress.value = audio.currentTime;
   currentTimeEl.textContent = formatTime(audio.currentTime);
@@ -144,20 +112,22 @@ audio.addEventListener("ended", () => {
   nextBtn.click();
 });
 
+/* Music toggle button 🎵 */
+musicBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  isPlaying ? pauseSong() : playSong();
+});
+
+/* iOS: auto play after first touch */
+document.addEventListener("click", () => {
+  if (!isPlaying) playSong();
+}, { once: true });
+
 function formatTime(time) {
   const m = Math.floor(time / 60);
   const s = Math.floor(time % 60).toString().padStart(2, "0");
   return `${m}:${s}`;
 }
 
-/* iOS: tự chạy sau lần chạm đầu */
-document.addEventListener("click", () => {
-  if (!isPlaying) playSong();
-}, { once: true });
-
+/* Init */
 loadSong(currentIndex);
-
-
-
-
-
