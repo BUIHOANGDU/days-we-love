@@ -1,5 +1,5 @@
 /* ===== ĐẾM THỜI GIAN ===== */
-const loveDate = new Date("2024-03-18T00:00:00");
+const loveDate = new Date("2024-01-20T00:00:00");
 
 function updateCounter() {
   const now = new Date();
@@ -19,37 +19,39 @@ updateCounter();
 
 /* ===== NHẠC NỀN & VIỀN PHÁT SÁNG ===== */
 const songs = [
-  "assets/music/HonCaYeu.mp3",
-  "assets/music/NgayDauTien.mp3",
-  "assets/music/YesIdo.mp3",
+  { name: "Hơn Cả Yêu", path: "assets/music/HonCaYeu.mp3" },
+  { name: "Ngày Đầu Tiên", path: "assets/music/NgayDauTien.mp3" },
+  { name: "Yes I Do", path: "assets/music/YesIdo.mp3" },
 ];
+
 const bgMusic = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicToggle");
-const mainCard = document.querySelector(".main-card"); // Lấy thẻ card
+const songNameDisplay = document.getElementById("songName");
+const mainCard = document.querySelector(".main-card");
 
-bgMusic.src = songs[Math.floor(Math.random() * songs.length)];
+const randomSong = songs[Math.floor(Math.random() * songs.length)];
+bgMusic.src = randomSong.path;
 
-// Hàm bật hiệu ứng
 function enableGlow() {
   musicBtn.classList.add("playing");
   musicBtn.innerText = "🎵";
   mainCard.classList.add("playing-glow");
+  songNameDisplay.innerText = "♪ " + randomSong.name;
+  songNameDisplay.style.opacity = "1";
 }
 
-// Hàm tắt hiệu ứng
 function disableGlow() {
   musicBtn.classList.remove("playing");
   musicBtn.innerText = "🔇";
   mainCard.classList.remove("playing-glow");
+  songNameDisplay.style.opacity = "0";
 }
 
 document.addEventListener(
   "click",
   () => {
     if (bgMusic.paused) {
-      bgMusic.play().then(() => {
-        enableGlow();
-      });
+      bgMusic.play().then(() => enableGlow());
     }
   },
   { once: true },
