@@ -114,3 +114,94 @@ function animate() {
   requestAnimationFrame(animate);
 }
 animate();
+
+/* ===== XỬ LÝ MỞ THƯ, TIM BAY & ALBUM ===== */
+const envelope = document.querySelector(".envelope-wrapper");
+const albumBtn = document.getElementById("albumBtn");
+const albumModal = document.getElementById("albumModal");
+const closeModal = document.querySelector(".close-modal");
+
+// 1. Hàm tạo trái tim bay
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("floating-heart");
+  heart.innerText = "❤️";
+
+  const section = document.querySelector(".envelope-section");
+  section.appendChild(heart);
+
+  const tx = (Math.random() - 0.5) * 300 + "px";
+  const ty = -(Math.random() * 200 + 100) + "px";
+  const tr = Math.random() * 360 + "deg";
+
+  heart.style.setProperty("--tx", tx);
+  heart.style.setProperty("--ty", ty);
+  heart.style.setProperty("--tr", tr);
+
+  heart.style.left = "50%";
+  heart.style.top = "50%";
+
+  setTimeout(() => {
+    heart.remove();
+  }, 1500);
+}
+
+// 2. Sự kiện click vào phong thư để MỞ/ĐÓNG
+envelope.addEventListener("click", (e) => {
+  // Nếu bấm vào nút Album thì không đóng phong thư
+  if (e.target.closest("#albumBtn")) return;
+
+  const isOpen = envelope.classList.contains("open");
+  envelope.classList.toggle("open");
+
+  // Nếu là hành động MỞ, thì bắn tim
+  if (!isOpen) {
+    for (let i = 0; i < 15; i++) {
+      setTimeout(createHeart, i * 50);
+    }
+  }
+});
+
+const container = document.querySelector(".timeline-container");
+const progressBar = document.querySelector(".progress-bar");
+const totalItems = document.querySelectorAll(".timeline-item").length;
+
+container.addEventListener("scroll", () => {
+  const scrollLeft = container.scrollLeft;
+  const width = container.clientWidth;
+
+  // Tính toán phần trăm đã xem
+  const progress = ((scrollLeft + width) / (width * totalItems)) * 100;
+  progressBar.style.width = progress + "%";
+});
+
+// Sửa lại hàm mở Album trong JS cũ của bạn
+albumBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  albumModal.style.display = "block";
+  document.body.style.overflow = "hidden"; // Khóa cuộn trang chính
+  container.scrollLeft = 0; // Reset về ảnh đầu
+  progressBar.style.width = 100 / totalItems + "%"; // Thanh tiến trình ban đầu
+});
+
+// 4. Sự kiện đóng Modal khi bấm nút X hoặc bấm ra ngoài ảnh
+closeModal.addEventListener("click", () => {
+  albumModal.style.display = "none";
+  document.body.style.overflow = "auto";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target == albumModal) {
+    albumModal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+});
+albumBtn.addEventListener("click", (e) => {
+  e.stopPropagation();
+  albumModal.style.display = "block";
+  document.body.style.overflow = "hidden";
+
+  // Tự động cuộn về đầu timeline
+  const container = document.querySelector(".timeline-container");
+  container.scrollLeft = 0;
+});
