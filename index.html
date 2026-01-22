@@ -55,10 +55,61 @@
 
       <div class="scroll-hint">↓ Vuốt xuống xem thư ↓</div>
     </div>
-
     <div class="envelope-section">
-      <div class="envelope">✉️</div>
-      <p class="envelope-text">Có một điều muốn nói…</p>
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <div class="letter-text">
+              Gửi Mèo của anh,<br /><br />
+              Cảm ơn em đã cùng anh đi qua những ngày tuyệt vời nhất. ❤️
+            </div>
+          </div>
+          <div id="albumBtn" class="album-icon">
+            <div class="icon-wrap">📸</div>
+            <span>Album</span>
+          </div>
+        </div>
+        <div class="heart-seal">❤️</div>
+      </div>
+      <p class="envelope-text">Chạm để mở thư & Album...</p>
+    </div>
+
+    <div id="albumModal" class="modal full-screen">
+      <div class="modal-content timeline-full">
+        <span class="close-modal">&times;</span>
+
+        <div class="timeline-header">
+          <h2 class="album-title">Hành Trình Yêu Thương</h2>
+          <div class="progress-container">
+            <div class="progress-bar"></div>
+          </div>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-wrapper">
+            <div class="timeline-item">
+              <div class="photo-overlay">
+                <div class="time-stamp">18/03/2024</div>
+                <p class="photo-desc">Ngày đầu mình gặp nhau ❤️</p>
+              </div>
+              <img src="assets/photo1.jpg" alt="Ngày đầu" />
+            </div>
+
+            <div class="timeline-item">
+              <div class="photo-overlay">
+                <div class="time-stamp">20/05/2024</div>
+                <p class="photo-desc">Buổi hẹn hò đầu tiên lung linh</p>
+              </div>
+              <img src="assets/photo2.jpg" alt="Buổi hẹn" />
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-hint-horizontal">
+          <span></span>
+          <p>Vuốt ngang để xem thêm</p>
+        </div>
+      </div>
     </div>
 
     <script src="main.js"></script>
